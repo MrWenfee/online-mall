@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.wenfee.onlinemall</groupId>
+    <artifactId>onlinemall</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>onlinemall</name>
+    <description>在线商城-聚合服务</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>coupon_service</module>
+        <module>member_service</module>
+        <module>product_service</module>
+        <module>renren-fast</module>
+        <module>ware_service</module>
+    </modules>
+
+</project>
