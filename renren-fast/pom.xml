@@ -52,6 +52,12 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.wenfee.onlinemall</groupId>
+			<artifactId>common_service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>

@@ -1,0 +1,40 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+#          lower-case-service-id: true
+
+      httpclient:
+        connect-timeout: 5000
+      routes:
+        - id: product_route
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/product/(?<segment>/?.*), /generator/$\{segment}
+
+        - id: admin_route
+          uri: lb://RENREN-FAST
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /renren-fast/$\{segment}
+
+
+
+
+logging:
+  level:
+    com.wenfee: DEBUG
+
+hyzs:
+  auth:
+    type: MINI_PROGRAM_SIGNATURE
+    excludePaths:
+    miniProgram:
+      appId: wxba6bffebe25e971d
+      appSecret: d6dbb12103dde8b79a3fe3f42e7dcaa4
+    serviceUrlMapping: {szcg-web-all : szcg-web}

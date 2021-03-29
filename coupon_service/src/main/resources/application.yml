@@ -1,0 +1,35 @@
+server:
+  # 应用服务 WEB 访问端口
+  port: 7000
+
+
+spring:
+  # 应用名称
+  application:
+    name: COUPON-SERVICE
+
+
+  # mysql数据库连接
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    # url 要加入 characterEncoding=utf8， 否则模糊查询失败
+    url: jdbc:mysql://localhost:3306/onlinemall_sms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+# mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml    # classpath* 代表扫描所有导入包；classpath：指扫描当前
+  global-config:
+    db-config:
+      # id 自增配置
+      id-type: auto
+
+
+
